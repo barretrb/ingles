@@ -1,0 +1,7 @@
+{
+  "GROQ_API_KEY": "YOUR_GROQ_API_KEY",
+  "MODELO_AUDIO": "whisper-large-v3-turbo",
+  "MODELO_TEXTO": "openai/gpt-oss-120b",
+  "WHATSAPP_PHONE": "5521999999999",
+  "CALLMEBOT_APIKEY": "YOUR_CALLMEBOT_APIKEY"
+}

@@ -1,0 +1,9 @@
+client_secret*.json
+token*.json
+Automacao/config_ia.json
+*.wav
+*.mp3
+*.m4a
+*.mp4
+__pycache__/
+.venv/

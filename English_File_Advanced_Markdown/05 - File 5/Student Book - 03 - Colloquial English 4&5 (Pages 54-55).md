@@ -1,0 +1,32 @@
+---
+title: "Student Book - 03 - Colloquial English 4&5 (Pages 54-55)"
+type: "Student Book"
+section: "05 - File 5"
+unit: "N/A"
+pages: "54-55"
+grammar_bank: "N/A"
+vocabulary_bank: "N/A"
+workbook: "N/A"
+---
+
+# 📘 Student Book — 03 - Colloquial English 4&5 (Pages 54-55)
+
+> **Quick References:**
+> * **Grammar Bank:** N/A
+> * **Vocabulary Bank:** N/A
+
+---
+
+
+
+## 📄 Page 54
+
+Colloquial English U Talking about...stress and relaxation 1 a b c d O THE INTERVIEW Part 1 Read the biographical information about Jordan Friedman. Would you be interested in participating in one of his stress reduction programmes? Jordan Friedman, also known as 'The Stress Coach', lives in New York City and is a specialist in the field of stress and stress reduction. He has been developing stress management programmes and resources for individuals, companies, and universities worldwide for over 20 years, and his client list includes Harvard University, the Massachusetts Institute of Technology, and the New York City Department of Education. He is the author of The Stress Manager's Manual, and his work has been featured by The New York Times, The Wall Street Journal, and The Today Show. Jordan is an expert on student stress, and has developed a programme called Stressbusters, which helps nearly 250,000 university students and staff. Watch Part 1 of the interview. Why does Jordan Friedman think it's important to reduce stress? Now watch again. Complete sentences 1—5. 1 The biggest causes of stress are... 2 Compared with 20 years ago, life today is more stressful because... 3 Nowadays, we don't have time to... 4 If our immune systems are weakened by stress,... 5 If we don't sleep well To what extent are you currently affected by stress? What impact is it having on you? Glossary stressor (technical) something that causes stress the immune system the system in your body that fights infection and disease punching bag (AmE) a heavy leather bag on a rope, used by boxers when they train (BrE punchbag) stroke a sudden serious illness when a blood vessel in the brain bursts or is blocked, which can cause death or the loss of the ability to move or to speak clearly O Part 2 a b c Now watch Part 2. Mark the sentences T (true) or F (false). 1 2 3 4 5 6 Different people should choose different ways of dealing with stress. The stress management techniques Jordan Friedman mentions all take a minute or less. The most important thing about stress management techniques is to make them a habit. Friedman worked with a student who felt very stressed when he had to drive. The student's classmates suggested that he should travel at a different time of day. The solution to the student's problem was difficult for him to see for himself. Watch again. Say why the F sentences are false. What kinds of situations make you feel stressed? What do you do to try to reduce the stress? Glossary salad bar a counter in a restaurant where customers can serve themselves from a variety of salad ingredients walk around the block go for a quick walk near where you live or work in a town or city subway car a carriage on an underground train O Part 3 a Now watch Part 3. Do students in your country suffer from similar stress?
+
+---
+
+## 📄 Page 55
+
+b c 2 a b Watch again and answer the questions. 1 At what age do people tend to be most stressed? 2 What main reasons does Jordan Friedman give for student stress? 3 How does stress affect memory? How might this affect students? 4 What two things does the Stressbusters programme give students? 5 What feedback have students given about Stressbusters? Do you ever have back rubs or massages when you feel stressed? Do they help you? Glossary back rub a short back massage campus the buildings of a university and the land around them wellness resources facilities for helping people to stay healthy O LOOKING AT LANGUAGE p Compound nouns Jordan Friedman frequently uses compound nouns, e.g. stress response, etc. Remember that when you hear new compound nouns, the first noun usually describes the second one — this will help you to work out the meaning. Try to complete the highlighted compound nouns in these extracts from the interview. 1 '...when you have emails coming in and t messages left and right...' 2 'Stress is really important, and, in fact, it can be a saver.. 3 'Er, stress contributes to high bl pressure, which contributes to h problems and stroke.' 4 'So these are all reasons to really pay attention to our levels and to take action to reduce the st 3 a b c d e O THE CONVERSATION Ida Josie stress.' 5 'The great thing about stress m like a salad bar.' 6 'We can do one-minute br is that it's exercises, we can, er, exercise, we can take a ten-minute walk around the block...' 7 'Stress is a very democratic occurrence, so older people are stressed, c students are stressed, babies get stressed.. ..there's a greater need to get help for, er, them 8 while in school, but if you're not with your usual network, it's even more challenging s sometimes to do so.' Watch and check. Watch the conversation. Circle the correct option to sum up each speaker's response to the question. Josie It's frustrating / motivating to be able to compare yourself easily with other people. Ida The slower pace of life in the past was stressful in the same / a different way. John People nowadays have less ambition / patience than in the past. Watch again. What do the speakers mean when they say...? ..you're pitted against everyone else in your career field.. '...that was a different kind of stress.' 2 ..there was nothing you could do in between...' 3 4 '...you're expected to be reachable at all times...' 5 'There's no hiding place...' 6 '...nowadays it's like 'Now. I want it now." Do you agree with the speakers that life is more stressful than it used to be? Why? Is your life getting more stressful? Watch some extracts in which the speakers refer back to something mentioned earlier. What do the bold words in each phrase refer back to? . .1 think a big part of that is... 1 2 ...because it, it sort of highlights the fact that... 3 And I think you're absolutely right, 4 ...l imagine you do as well... .that's the problem... 5 Now have a conversation in groups of three. Discuss the statements. 1 Being stressed can have positive as well as negative effects. 2 A 'slower pace of life' is always better.
+
+---

@@ -1,0 +1,34 @@
+---
+title: "Workbook - 02 - 4B The sound of silence (Pages 29-31)"
+type: "Workbook"
+section: "04 - File 4"
+unit: "4B"
+pages: "29-31"
+student_book_reference: "../../English_File_Advanced_Markdown/04 - File 4/Student Book - 02 - 4B The sound of silence (Pages 29-31).md"
+---
+
+# 📝 Workbook — Workbook - 02 - 4B The sound of silence (Pages 29-31)
+
+> **Student Book Companion:** [Student Book Reference](../../English_File_Advanced_Markdown/04 - File 4/Student Book - 02 - 4B The sound of silence (Pages 29-31).md)
+
+---
+
+
+
+## 📄 Page 29
+
+The sound of silence No man should live where he can hear his neighbor's dog bark. Nathaniel Macon, American politician 1 a C speculation and deduction VOCABULARY sounds and the human voice Circle the correct word. V sounds and the human voicel P consonant clusters b c Match words 1—9 to sounds a—i. 1 2 3 4 5 6 7 8 9 a leaking tap a camera the wind an old, wooden floor a clock car brakes a car horn a door water c a b d e f g h click hoot creak slam whistle splash screech tick Complete the sentences with the past simple form of verbs that describe the human voice. 1 2 3 4 5 6 7 8 9 'What have you done this time?' sighed Jamie's mother with resignation. Halfway through the exam, Max wh Ethan, 'What's the answer to number 5?' 'My leg hurts,' the player gr the ground. 'There's a spider in the bath!' my brother to as he lay on scr in horror. 'l didn't have t-t-time to do my h-h-homework,' Ruby st nervously. 1 2 3 4 5 6 7 8 9 10 11 12 We could hear the waves crashin / screeching on the rocks during the storm. If I don't close my bedroom window, the crash / roar of the traffic on the motorway keeps me awake. Owen has got a cold, so he's been snoring / sniffing all day. The little girl splashed/ crunched the apple in her mouth. We all ran out of the room because there was a large bee hissing / buzzing around the window. Ella banged / tapped her fingers impatiently on the table, waiting for Marcus to answer his phone. I didn't know the words to the song, so I just hooted / hummed the tune. There was a series of loud bangs / slams as the fireworks went off. Your dad must be asleep I can hear him creaking / snoring. I can't stand people who slurp / drip their soup when they eat it. I had to get up and close the window because it was hooting / rattling in the wind. The cat arched its back and hissed / whistled at us as we walked in. 'Sorry,' he m but nobody could understand what he said. 'STOP MAKING SO MUCH NOISE!' the old man from an upstairs window. 'My new bike is broken,' s tears rolling down her cheeks. 'Look at her hat!' the children g really funny.' the little girl, . 'It looks 29 Downloaded by Rafael Barreto (rafaelferreirabarreto@gmail.com)
+
+---
+
+## 📄 Page 30
+
+2 a b c d PRONUNCIATION consonant clusters Write the words with consonant clusters. 3 a 1 2 3 4 5 6 7 8 9 IO /skri:tJ/ screech /krnntJt/ /smfs/ /'mnmbl/ /skri:m/ /s13:p/ /splæJ/ /lrætld/ /lstæmor/ /Jaots/ GRAMMAR speculation and deduction Complete the conversations using must, might / may, could, can't, or should and the correct form of the verb in brackets. More than one answer may be possible. 04.3 Listen and check. Then listen again and repeat the words. 04.4 Listen and write the missing words with consonant clusters. 1 2 3 4 5 6 7 The man punched the burglar on the nose. It's always a good idea to after doing exercise. 'What a wonderful surprise: she before and 1 2 3 4 5 6 7 8 A B A B A B A B A B A B A B A B Beth's looking pleased with herself. Yes. She musthaye done well in her job interview. (do) Where's Daisy? She said to meet her just My son's just failed his driving test for the time! We're going to IKEA to get some new for my study. The best speech was the one given by outside the tube station. I suppose she entrance. (wait) at a different the Kate is very what she's thinking. Adam left work about an hour ago. and always lets you know Yes, he takes 20 minutes. (be) here by now. It only 8 We plan our route. out the map on the table in order to How about this dress for your cousin? I don't know. I've never seen her in a dress. She it. (not like) My brother's in his room doing his homework. Well, he very hard. I can hear him talking on the phone! (study) Tony didn't show up at the party. He about it. (forget) Yes, he's very absent-minded. Nicole hasn't come to work today. She's ill. Well, she anything serious wrong with her— I've just seen her walking her dog. (have) I'm going to get tickets for the music festival later. Shall I get one for your boyfriend? Let me talk to him first. He to go, in which case he won't need a ticket. (not want) 30 04.4 Listen again and repeat the sentences. Downloaded by Rafael Barreto (rafaelferreirabarreto@gmail.com)
+
+---
+
+## 📄 Page 31
+
+b c -i Complete the second sentence so that it means the same as the first sentence. Use the word in brackets. 1 1'm sure you'll enjoy the film. (definitely) You'll definitely enjoy the film 2 1'm sure we'll win the match. (bound) We 3 The manager is sure not to give us a pay rise. (definitely) The manager 4 1 think it'll rain at the weekend. (likely) It 5 My husband probably won't get promoted this year. (unlikely) My husband 6 My father is likely to take early retirement. (probably) My father 7 Your parents will almost certainly complain about it. (sure) Your parents 8 1 don't think Luke will pass his accountancy exam. (probably) Luke Look at the photo and answer the questions. Use modal verbs and adjectives and adverbs for speculation where possible. VOCABULARY FROM READING 4 How being quiet can change your life Complete the sentences with a word from the list. age-old cherish deal with hubbub ice muster up radical show up strip away uninterrupted 1 2 3 4 5 6 7 8 9 10 If you cherish rare moments of peace and quiet, the best place to go is a country retreat. Shops exploit the connections between chocolate and love on Valentine's Day. The idea of Mia's new book group is that you shut up, and read. The police will have to the lies the suspect has told in order to find out what really happened on the night of the crime. Eddie didn't know anyone at the dinner, so he told a few jokes to try to break the Sophie was desperate to ask a question, but she had to the self-restraint to wait until the speaker had finished his talk. There's something quite about the idea of getting rid of all your possessions. Rosie passed the enquiry on to a colleague, as she hadn't been able to own. it on her Every Friday after work, Rob escapes the of city life and heads for the mountains. The technique involves maintaining eye contact with your partner. 1 2 3 4 5 6 Where do you think the photo was taken? It might have been taken on a road in the Rocky Who do you think the man is? Where do you think he's come from? Where do you think he's going? How do you think he's feeling? What noises do you think he can hear? 31
+
+---
