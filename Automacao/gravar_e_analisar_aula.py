@@ -18,7 +18,7 @@ from datetime import datetime
 if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
-BASE_DIR = r"I:\Meu Drive\Estudos\Inglês\Advanced"
+BASE_DIR = "I:\\Meu Drive\\Estudos\\Ingl\u00eas\\Advanced"
 GRAVACOES_DIR = os.path.join(BASE_DIR, "Gravacoes")
 TRACKER_PATH = os.path.join(BASE_DIR, "Tracker_Aulas.md")
 CONFIG_PATH = os.path.join(BASE_DIR, "Automacao", "config_ia.json")
@@ -329,13 +329,16 @@ Sua missão é analisar a transcrição completa de uma aula de inglês do aluno
 ESTRUTURA DO LIVRO ENGLISH FILE ADVANCED (ÍNDICE DE CAPÍTULOS E PÁGINAS):
 {indice_livro}
 
-DIRETRIZES DE ANÁLISE:
+REGRA CRÍTICA DE ANTI-ALUCINAÇÃO:
+Baseie-se ESTRITAMENTE no que foi dito na transcrição. Se a transcrição for muito curta, contiver apenas ruídos, ou não tiver conteúdo de aula suficiente, NÃO INVENTE E NÃO ADIVINHE NADA. Nesse caso, responda APENAS com a palavra: ERRO_TRANSCRICAO_INSUFICIENTE
+
+DIRETRIZES DE ANÁLISE (Só siga se houver aula real na transcrição):
 1. Identifique os tópicos e páginas trabalhados na aula de hoje.
 2. ANALISE COM ATENÇÃO O FINAL DA AULA (onde a professora Patrícia e o Rafael combinam onde pararam, lição de casa ou o que farão na próxima aula).
 3. Cruze o que foi falado com a estrutura do livro para mapear com precisão o próximo capítulo/páginas.
 4. Gere o relatório de hoje E crie o planejamento da PRÓXIMA AULA com metas e vocabulário-alvo para revisão prévia no WhatsApp.
 
-Gere OBRIGATORIAMENTE no seguinte formato Markdown exato:
+Gere OBRIGATORIAMENTE no seguinte formato Markdown exato (se houver aula válida):
 
 ## [{{DATA_HOJE}}] Aula Concluída — [Nome do Capítulo e Páginas Trabalhadas]
 
@@ -389,7 +392,11 @@ Gere OBRIGATORIAMENTE no seguinte formato Markdown exato:
 
     res = requests.post(url, headers=headers, json=payload)
     if res.status_code == 200:
-        return res.json()["choices"][0]["message"]["content"].strip()
+        conteudo = res.json()["choices"][0]["message"]["content"].strip()
+        if "ERRO_TRANSCRICAO_INSUFICIENTE" in conteudo:
+            print("[ERRO] IA detectou que a transcrição tem apenas ruídos ou é muito curta. Abortando para evitar alucinações.")
+            return None
+        return conteudo
     else:
         print(f"[ERRO] Erro na análise Groq Llama: {res.status_code} - {res.text}")
         return None

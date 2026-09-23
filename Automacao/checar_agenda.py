@@ -35,7 +35,7 @@ ICAL_URL = "https://calendar.google.com/calendar/ical/rafaelferreirabarreto%40gm
 ALVO_SUMMARY = "Rafa - EF"
 ALVO_ORGANIZER = "patricia.ibiapina25@gmail.com"
 
-BASE_DIR = r"I:\Meu Drive\Estudos\Inglês\Advanced"
+BASE_DIR = "I:\\Meu Drive\\Estudos\\Ingl\u00eas\\Advanced"
 TRACKER_PATH = os.path.join(BASE_DIR, "Tracker_Aulas.md")
 SCRIPT_GRAVAR = os.path.join(BASE_DIR, "Automacao", "gravar_e_analisar_aula.py")
 CONFIG_PATH = os.path.join(BASE_DIR, "Automacao", "config_ia.json")
