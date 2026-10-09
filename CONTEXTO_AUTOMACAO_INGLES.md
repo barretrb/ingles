@@ -76,5 +76,5 @@ A automação opera de forma 100% autônoma, sem necessidade do Antigravity ou I
 
 Ao iniciar uma nova sessão sobre as aulas de inglês, o assistente deve:
 1. Consultar este arquivo `CONTEXTO_AUTOMACAO_INGLES.md` para recuperar todo o contexto técnico e pedagógico.
-2. Verificar o final do arquivo [`Tracker_Aulas.md`](file:///I:/Meu%20Drive/Estudos/Ingl%C3%AAs/Advanced/Tracker_Aulas.md) para saber o último ponto de parada e palavras-alvo combinadas.
+2. Verificar o final do arquivo [`Tracker_Aulas.md`](file:///H:/Meu%20Drive/Estudos/Ingl%C3%AAs/Advanced/Tracker_Aulas.md) para saber o último ponto de parada e palavras-alvo combinadas.
 3. Se necessário testar ou ajustar a automação, utilizar os scripts localizados em `Automacao/`.
