@@ -426,7 +426,8 @@ def main():
     audio_path = os.path.join(GRAVACOES_DIR, f"{data_str}_Rafa-EF.wav")
 
     # 1. Gravar Aula
-    sucesso = gravar_audio(audio_path, DURACAO_MAXIMA_SEGUNDOS)
+    aguardar_zoom = "--imediato" not in sys.argv and "--sem-zoom" not in sys.argv
+    sucesso = gravar_audio(audio_path, DURACAO_MAXIMA_SEGUNDOS, aguardar_zoom=aguardar_zoom)
     if not sucesso or not os.path.exists(audio_path):
         return
 
