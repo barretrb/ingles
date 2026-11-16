@@ -18,7 +18,7 @@ from datetime import datetime
 if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
-_DRIVE_DIR = r"H:\Meu Drive\Estudos\Ingl?s\Advanced"
+_DRIVE_DIR = "H:\\Meu Drive\\Estudos\\Ingl\u00eas\\Advanced"
 _LOCAL_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BASE_DIR = _DRIVE_DIR if os.path.exists(_DRIVE_DIR) else _LOCAL_DIR
 GRAVACOES_DIR = os.path.join(BASE_DIR, "Gravacoes")
