@@ -18,7 +18,9 @@ from datetime import datetime
 if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
-BASE_DIR = "H:\Meu Drive\\Estudos\\Ingl\u00eas\\Advanced"
+_DRIVE_DIR = r"H:\Meu Drive\Estudos\Ingl?s\Advanced"
+_LOCAL_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = _DRIVE_DIR if os.path.exists(_DRIVE_DIR) else _LOCAL_DIR
 GRAVACOES_DIR = os.path.join(BASE_DIR, "Gravacoes")
 TRACKER_PATH = os.path.join(BASE_DIR, "Tracker_Aulas.md")
 CONFIG_PATH = os.path.join(BASE_DIR, "Automacao", "config_ia.json")
@@ -439,6 +441,10 @@ def main():
     aguardar_zoom = "--imediato" not in sys.argv and "--sem-zoom" not in sys.argv
     sucesso = gravar_audio(audio_path, DURACAO_MAXIMA_SEGUNDOS, aguardar_zoom=aguardar_zoom)
     if not sucesso or not os.path.exists(audio_path):
+        return
+
+    if not api_key:
+        print(f"[INFO] ?udio salvo em {audio_path}. Configure GROQ_API_KEY ou monte o Drive H:\\ para transcrever.")
         return
 
     # 2. Transcrever com Groq Whisper
