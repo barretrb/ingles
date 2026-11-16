@@ -22,6 +22,7 @@ BASE_DIR = "H:\Meu Drive\\Estudos\\Ingl\u00eas\\Advanced"
 GRAVACOES_DIR = os.path.join(BASE_DIR, "Gravacoes")
 TRACKER_PATH = os.path.join(BASE_DIR, "Tracker_Aulas.md")
 CONFIG_PATH = os.path.join(BASE_DIR, "Automacao", "config_ia.json")
+STOP_FLAG_PATH = os.path.join(BASE_DIR, "Automacao", "PARAR_GRAVACAO.flag")
 
 DURACAO_MAXIMA_SEGUNDOS = 4500  # Até 75 minutos de limite de segurança
 
@@ -98,6 +99,8 @@ def gravar_audio(filepath, duracao_max=DURACAO_MAXIMA_SEGUNDOS, aguardar_zoom=Tr
             loop_frames = []
             mic_frames = []
 
+            if os.path.exists(STOP_FLAG_PATH):
+                os.remove(STOP_FLAG_PATH)
             start_time = time.time()
             ultimo_check_zoom = time.time()
             ultimo_print_status = time.time()
@@ -129,9 +132,16 @@ def gravar_audio(filepath, duracao_max=DURACAO_MAXIMA_SEGUNDOS, aguardar_zoom=Tr
                         segundos = int(tempo_decorrido % 60)
                         print(f"[GRAVANDO] ⏱️ {minutos:02d}:{segundos:02d} min gravados... (capturando áudio)")
 
-                    # A cada 5 segundos verifica se o Zoom encerrou
+                    # A cada 5 segundos verifica se o Zoom encerrou ou se h? sinal de parada
                     if time.time() - ultimo_check_zoom > 5:
                         ultimo_check_zoom = time.time()
+                        if os.path.exists(STOP_FLAG_PATH):
+                            try:
+                                os.remove(STOP_FLAG_PATH)
+                            except OSError:
+                                pass
+                            print(f"\n[MANUAL] Sinal de parada recebido ({tempo_decorrido/60:.1f} min gravados). Encerrando...")
+                            break
                         zoom_rodando = verificar_zoom_ativo()
                         
                         # Se o Zoom estava aberto e fechou, e já gravamos pelo menos 5 minutos:
