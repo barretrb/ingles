@@ -35,7 +35,9 @@ ICAL_URL = "https://calendar.google.com/calendar/ical/rafaelferreirabarreto%40gm
 ALVO_SUMMARY = "Rafa - EF"
 ALVO_ORGANIZER = "patricia.ibiapina25@gmail.com"
 
-BASE_DIR = "H:\Meu Drive\\Estudos\\Ingl\u00eas\\Advanced"
+_DRIVE_DIR = "H:\\Meu Drive\\Estudos\\Ingl\u00eas\\Advanced"
+_LOCAL_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = _DRIVE_DIR if os.path.exists(_DRIVE_DIR) else _LOCAL_DIR
 TRACKER_PATH = os.path.join(BASE_DIR, "Tracker_Aulas.md")
 SCRIPT_GRAVAR = os.path.join(BASE_DIR, "Automacao", "gravar_e_analisar_aula.py")
 CONFIG_PATH = os.path.join(BASE_DIR, "Automacao", "config_ia.json")
@@ -382,9 +384,13 @@ def modo_gravar():
 
     log("INFO", "Acionando script de gravação e análise IA...")
     python_exe = sys.executable
+    if python_exe.lower().endswith("pythonw.exe"):
+        python_exe = python_exe[:-5] + ".exe"
+    creation_flags = getattr(subprocess, "CREATE_NEW_CONSOLE", 0)
     result = subprocess.run(
-        [python_exe, SCRIPT_GRAVAR],
-        cwd=os.path.dirname(SCRIPT_GRAVAR)
+        [python_exe, SCRIPT_GRAVAR, "--imediato"],
+        cwd=os.path.dirname(SCRIPT_GRAVAR),
+        creationflags=creation_flags
     )
     if result.returncode == 0:
         log("OK", "Pipeline de gravação + análise concluído!")

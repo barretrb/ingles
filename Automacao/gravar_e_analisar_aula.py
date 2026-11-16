@@ -90,51 +90,62 @@ def gravar_audio(filepath, duracao_max=DURACAO_MAXIMA_SEGUNDOS, aguardar_zoom=Tr
             print(f"[AUDIO] Capturando Fone/Saída: {loopback['name'] if loopback else 'N/A'}")
             print(f"[AUDIO] Capturando Microfone: {default_mic['name']}")
 
+            from math import gcd
+
+            loop_frames = []
+            loop_total_samples = 0
+            mic_frames = []
+
+            def _mic_callback(in_data, frame_count, time_info, status):
+                mic_frames.append(in_data)
+                return (None, pyaudio.paContinue)
+
             loop_stream = None
             if loopback:
                 loop_stream = p.open(format=pyaudio.paInt16, channels=loop_ch, rate=loop_sr,
                                      input=True, input_device_index=loopback['index'])
-            
-            mic_stream = p.open(format=pyaudio.paInt16, channels=mic_ch, rate=mic_sr,
-                                input=True, input_device_index=default_mic['index'])
 
-            loop_frames = []
-            mic_frames = []
+            mic_stream = p.open(format=pyaudio.paInt16, channels=mic_ch, rate=mic_sr,
+                                input=True, input_device_index=default_mic['index'],
+                                stream_callback=_mic_callback)
+            mic_stream.start_stream()
 
             if os.path.exists(STOP_FLAG_PATH):
                 os.remove(STOP_FLAG_PATH)
             start_time = time.time()
             ultimo_check_zoom = time.time()
             ultimo_print_status = time.time()
-            zoom_estava_aberto = verificar_zoom_ativo()
+            zoom_estava_aberto = aguardar_zoom and verificar_zoom_ativo()
 
             print("\n" + "="*60)
-            print("[GRAVANDO] 🔴 Gravação ativa! Capturando fone e microfone...")
+            print("[GRAVANDO] \U0001f534 Gravação ativa! Capturando fone e microfone...")
             print("[DICA] A gravação encerra automaticamente quando o Zoom fechar,")
             print("       ou pressione CTRL+C nesta janela para finalizar antes.")
             print("="*60 + "\n")
 
             try:
                 while time.time() - start_time < duracao_max:
-                    avail_mic = mic_stream.get_read_available()
-                    if avail_mic > 0:
-                        mic_frames.append(mic_stream.read(avail_mic, exception_on_overflow=False))
-                    
                     if loop_stream:
                         avail_loop = loop_stream.get_read_available()
                         if avail_loop > 0:
-                            loop_frames.append(loop_stream.read(avail_loop, exception_on_overflow=False))
-                    
+                            chunk = loop_stream.read(avail_loop, exception_on_overflow=False)
+                            n_samples = len(chunk) // (loop_ch * 2)
+                            expected_end = int((time.time() - start_time) * loop_sr)
+                            gap = expected_end - n_samples - loop_total_samples
+                            if gap > int(0.05 * loop_sr):
+                                loop_frames.append(b'\x00' * (gap * loop_ch * 2))
+                                loop_total_samples += gap
+                            loop_frames.append(chunk)
+                            loop_total_samples += n_samples
+
                     tempo_decorrido = time.time() - start_time
 
-                    # Log visual a cada 30 segundos
                     if time.time() - ultimo_print_status >= 30:
                         ultimo_print_status = time.time()
                         minutos = int(tempo_decorrido // 60)
                         segundos = int(tempo_decorrido % 60)
-                        print(f"[GRAVANDO] ⏱️ {minutos:02d}:{segundos:02d} min gravados... (capturando áudio)")
+                        print(f"[GRAVANDO] \u23f1\ufe0f {minutos:02d}:{segundos:02d} min gravados... (capturando áudio)")
 
-                    # A cada 5 segundos verifica se o Zoom encerrou ou se h? sinal de parada
                     if time.time() - ultimo_check_zoom > 5:
                         ultimo_check_zoom = time.time()
                         if os.path.exists(STOP_FLAG_PATH):
@@ -144,15 +155,15 @@ def gravar_audio(filepath, duracao_max=DURACAO_MAXIMA_SEGUNDOS, aguardar_zoom=Tr
                                 pass
                             print(f"\n[MANUAL] Sinal de parada recebido ({tempo_decorrido/60:.1f} min gravados). Encerrando...")
                             break
-                        zoom_rodando = verificar_zoom_ativo()
-                        
-                        # Se o Zoom estava aberto e fechou, e já gravamos pelo menos 5 minutos:
-                        if zoom_estava_aberto and not zoom_rodando and tempo_decorrido > 300:
-                            print(f"\n[ZOOM] [{datetime.now().strftime('%H:%M:%S')}] Zoom fechado. Encerrando gravação da aula ({tempo_decorrido/60:.1f} min gravados)...")
-                            break
-                        if zoom_rodando:
-                            zoom_estava_aberto = True
-                    
+
+                        if aguardar_zoom:
+                            zoom_rodando = verificar_zoom_ativo()
+                            if zoom_estava_aberto and not zoom_rodando and tempo_decorrido > 300:
+                                print(f"\n[ZOOM] [{datetime.now().strftime('%H:%M:%S')}] Zoom fechado. Encerrando gravação da aula ({tempo_decorrido/60:.1f} min gravados)...")
+                                break
+                            if zoom_rodando:
+                                zoom_estava_aberto = True
+
                     time.sleep(0.05)
             except KeyboardInterrupt:
                 tempo_decorrido = time.time() - start_time
@@ -164,7 +175,6 @@ def gravar_audio(filepath, duracao_max=DURACAO_MAXIMA_SEGUNDOS, aguardar_zoom=Tr
             mic_stream.stop_stream()
             mic_stream.close()
 
-            # Processar e mesclar os áudios
             raw_mic = b''.join(mic_frames)
             raw_loop = b''.join(loop_frames) if loop_frames else b''
 
@@ -178,10 +188,12 @@ def gravar_audio(filepath, duracao_max=DURACAO_MAXIMA_SEGUNDOS, aguardar_zoom=Tr
 
             target_sr = 16000
             if len(arr_mic) > 0 and mic_sr != target_sr:
-                arr_mic = signal.resample(arr_mic, int(len(arr_mic) * target_sr / mic_sr))
+                g = gcd(target_sr, mic_sr)
+                arr_mic = signal.resample_poly(arr_mic, target_sr // g, mic_sr // g)
 
             if len(arr_loop) > 0 and loop_sr != target_sr:
-                arr_loop = signal.resample(arr_loop, int(len(arr_loop) * target_sr / loop_sr))
+                g = gcd(target_sr, loop_sr)
+                arr_loop = signal.resample_poly(arr_loop, target_sr // g, loop_sr // g)
 
             max_len = max(len(arr_mic), len(arr_loop))
             if max_len == 0:
