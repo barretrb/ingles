@@ -415,12 +415,8 @@ Gere OBRIGATORIAMENTE no seguinte formato Markdown exato (se houver aula válida
     }
 
     res = requests.post(url, headers=headers, json=payload)
-    if res.status_code == 413 and modelo_texto != "llama-3.3-70b-versatile":
-        print(f"[AVISO] Limite TPM excedido para {modelo_texto}. Tentando fallback para llama-3.3-70b-versatile...")
-        payload["model"] = "llama-3.3-70b-versatile"
-        res = requests.post(url, headers=headers, json=payload)
     if res.status_code == 413 and len(transcricao) > 20000:
-        print("[AVISO] Transcrição muito longa para o limite TPM; resumindo com os primeiros 20.000 caracteres...")
+        print(f"[AVISO] Limite TPM excedido para {modelo_texto}; reenviando com os primeiros 20.000 caracteres...")
         payload["messages"][1]["content"] = f"Aqui está a transcrição da aula de hoje:\n\n{transcricao[:20000]}"
         res = requests.post(url, headers=headers, json=payload)
 
